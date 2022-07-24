@@ -1,6 +1,7 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using aspnetcore1.Models;
+using RandomStringCreator;
 
 namespace aspnetcore1.Controllers;
 
@@ -13,9 +14,12 @@ public class HomeController : Controller
         _logger = logger;
     }
 
-    public IActionResult Index()
+    public String Index()
     {
-        return View();
+        
+        string s = new StringCreator().Get(6);
+        return s;
+;
     }
 
     public IActionResult Privacy()
